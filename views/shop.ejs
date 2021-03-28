@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>Shopping Page</title>
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div class="flex-container">
+			<%- include('includes/header.ejs') %>
+			<div class="title"><h6>Our Products</h6></div>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Product Title</th>
+						<th scope="col">Product Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% if(productsArray.length) { for(let product of
+					productsArray) { %>
+					<tr>
+						<td><%= %></td>
+						<td><%= product.title %></td>
+						<td><%= product.description %></td>
+					</tr>
+					<% } } else { %>
+					<tr>
+						<td colspan="3">No Product is available now!</td>
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
